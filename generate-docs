@@ -1,0 +1,9 @@
+#!/bin/bash
+
+jazzy --clean \
+  --swift-version 2.2 \
+  --min-acl internal \
+  --author "Kamil Kowalski" \
+  --author_url "http://www.kamilkowalski.pl" \
+  --github_url "https://github.com/kamilkowalski/iTax" \
+  --root-url "http://kamilkowalski.github.io/iTax/"
