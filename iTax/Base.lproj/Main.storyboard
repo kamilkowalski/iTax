@@ -658,39 +658,12 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="QRz-0l-UXD" kind="relationship" relationship="window.shadowedContentViewController" id="Jff-D1-Ar0"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
-        </scene>
-        <!--Main View Controller-->
-        <scene sceneID="hIz-AP-VOD">
-            <objects>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="iTax" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="707" height="461"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="gGM-FG-pfT">
-                                <rect key="frame" x="0.0" y="0.0" width="707" height="461"/>
-                                <connections>
-                                    <segue destination="hQj-6R-xy5" kind="embed" id="mPU-Se-OX6"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="gGM-FG-pfT" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="2NF-Fe-Ztu"/>
-                            <constraint firstAttribute="trailing" secondItem="gGM-FG-pfT" secondAttribute="trailing" id="5iR-Vf-5DV"/>
-                            <constraint firstAttribute="bottom" secondItem="gGM-FG-pfT" secondAttribute="bottom" id="Bcm-lT-cMc"/>
-                            <constraint firstItem="gGM-FG-pfT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Mwa-GX-bbD"/>
-                        </constraints>
-                    </view>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="75.5" y="812.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="aP6-LL-oeP">
@@ -708,7 +681,7 @@
                 </windowController>
                 <customObject id="Q0S-NH-DkW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="82" y="1577"/>
+            <point key="canvasLocation" x="75" y="765"/>
         </scene>
         <!--Add Invoice View Controller-->
         <scene sceneID="C7n-3S-cKH">
@@ -762,7 +735,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Y-JH-7PL">
-                                        <rect key="frame" x="127" y="97" width="244" height="22"/>
+                                        <rect key="frame" x="127" y="97" width="270" height="22"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Pmq-VD-hzl">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -823,17 +796,6 @@
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zIn-wu-Dw3">
-                                        <rect key="frame" x="367" y="90" width="36" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="dsv-tQ-FFU"/>
-                                            <constraint firstAttribute="height" constant="22" id="vQj-7a-018"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="magnifier" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sPe-nU-4Ca">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="t8s-nR-6b6" firstAttribute="leading" secondItem="Y2Y-JH-7PL" secondAttribute="leading" id="2bU-1k-5Gd"/>
@@ -841,7 +803,6 @@
                                     <constraint firstAttribute="trailing" secondItem="ed2-ai-yXb" secondAttribute="trailing" constant="8" id="4LU-MK-MZR"/>
                                     <constraint firstItem="bas-wq-5iP" firstAttribute="leading" secondItem="c7P-B3-er5" secondAttribute="trailing" constant="1" id="9Gr-bj-eOj"/>
                                     <constraint firstItem="4cb-qb-YoV" firstAttribute="leading" secondItem="Vz9-qJ-95u" secondAttribute="leading" id="BNo-Gh-hmT"/>
-                                    <constraint firstItem="zIn-wu-Dw3" firstAttribute="leading" secondItem="Y2Y-JH-7PL" secondAttribute="trailing" constant="2" id="Ciw-go-wop"/>
                                     <constraint firstItem="H2T-lG-PqF" firstAttribute="leading" secondItem="RYn-ic-sam" secondAttribute="leading" constant="8" id="FEG-rv-byo"/>
                                     <constraint firstItem="c7P-B3-er5" firstAttribute="baseline" secondItem="wOB-rn-4vA" secondAttribute="baseline" id="Nmt-3e-ydH"/>
                                     <constraint firstItem="wOB-rn-4vA" firstAttribute="top" secondItem="ed2-ai-yXb" secondAttribute="bottom" constant="3" id="PmD-n3-gwJ"/>
@@ -856,10 +817,9 @@
                                     <constraint firstAttribute="trailing" secondItem="Nbz-Hy-qdf" secondAttribute="trailing" constant="8" id="gN4-em-yet"/>
                                     <constraint firstItem="Y2Y-JH-7PL" firstAttribute="leading" secondItem="Vz9-qJ-95u" secondAttribute="trailing" constant="40" id="kgx-zG-Ve8"/>
                                     <constraint firstItem="Y2Y-JH-7PL" firstAttribute="baseline" secondItem="Vz9-qJ-95u" secondAttribute="baseline" id="m43-E3-cYv"/>
-                                    <constraint firstAttribute="trailing" secondItem="zIn-wu-Dw3" secondAttribute="trailing" constant="8" id="n5X-WI-laN"/>
                                     <constraint firstItem="Nbz-Hy-qdf" firstAttribute="leading" secondItem="bas-wq-5iP" secondAttribute="trailing" constant="8" id="rCK-Vy-0we"/>
-                                    <constraint firstItem="zIn-wu-Dw3" firstAttribute="baseline" secondItem="Y2Y-JH-7PL" secondAttribute="baseline" id="rpy-tz-FC7"/>
                                     <constraint firstItem="wOB-rn-4vA" firstAttribute="leading" secondItem="Y2Y-JH-7PL" secondAttribute="leading" id="taF-Bd-p0D"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y2Y-JH-7PL" secondAttribute="trailing" constant="8" id="trC-U2-EDB"/>
                                     <constraint firstItem="wwu-Pb-fl8" firstAttribute="leading" secondItem="Vz9-qJ-95u" secondAttribute="leading" id="uIk-aI-nGQ"/>
                                     <constraint firstItem="Nbz-Hy-qdf" firstAttribute="top" secondItem="wOB-rn-4vA" secondAttribute="top" id="vcb-0G-7Do"/>
                                     <constraint firstItem="c7P-B3-er5" firstAttribute="leading" secondItem="wOB-rn-4vA" secondAttribute="trailing" constant="1" id="waP-dl-R8x"/>
@@ -1276,7 +1236,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="HA8-Wc-6dL">
-                                    <rect key="frame" x="1" y="136" width="655" height="16"/>
+                                    <rect key="frame" x="1" y="136" width="818" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="O7Z-Xi-Fak">
@@ -1369,35 +1329,13 @@
                 </viewController>
                 <customObject id="VUi-Kz-Z7H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875" y="1638"/>
+            <point key="canvasLocation" x="75" y="1262"/>
         </scene>
-        <!--Tab View Controller-->
-        <scene sceneID="537-kO-lOx">
-            <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="hQj-6R-xy5" sceneMemberID="viewController">
-                    <tabViewItems>
-                        <tabViewItem identifier="" id="KOu-Of-XTg"/>
-                        <tabViewItem identifier="" id="fTQ-Z6-HyE"/>
-                    </tabViewItems>
-                    <tabView key="tabView" type="noTabsNoBorder" id="mfU-Rf-ziw">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <font key="font" metaFont="message"/>
-                        <tabViewItems/>
-                    </tabView>
-                    <connections>
-                        <segue destination="QRz-0l-UXD" kind="relationship" relationship="tabItems" id="Tcf-CX-EiL"/>
-                        <segue destination="hDj-TC-C8T" kind="relationship" relationship="tabItems" id="aoB-pb-r3h"/>
-                    </connections>
-                </tabViewController>
-                <customObject id="H1q-nc-lHj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="793" y="813"/>
-        </scene>
-        <!--Faktury-->
+        <!--Invoices View Controller-->
         <scene sceneID="M1Y-hJ-FB5">
             <objects>
-                <viewController title="Faktury" id="QRz-0l-UXD" customClass="InvoicesViewController" customModule="iTax" customModuleProvider="target" sceneMemberID="viewController">
+                <customObject id="v57-ND-iF8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="QRz-0l-UXD" customClass="InvoicesViewController" customModule="iTax" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="2TE-rq-bh9">
                         <rect key="frame" x="0.0" y="0.0" width="713" height="437"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1613,7 +1551,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jAk-st-G70">
-                                    <rect key="frame" x="1" y="242" width="448" height="16"/>
+                                    <rect key="frame" x="1" y="379" width="711" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Iot-aI-crW">
@@ -1661,25 +1599,8 @@
                         <outlet property="invoicesTable" destination="Mbp-MD-Up1" id="nQk-j0-QN2"/>
                     </connections>
                 </viewController>
-                <customObject id="v57-ND-iF8" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593.5" y="538.5"/>
-        </scene>
-        <!--Kontrahenci-->
-        <scene sceneID="hcr-59-j3J">
-            <objects>
-                <viewController title="Kontrahenci" id="hDj-TC-C8T" customClass="CustomersViewController" customModule="iTax" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="bnf-0P-gdo">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="TyI-2X-I6J" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1462" y="1079"/>
+            <point key="canvasLocation" x="957.5" y="249.5"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="magnifier" width="96" height="96"/>
-    </resources>
 </document>
