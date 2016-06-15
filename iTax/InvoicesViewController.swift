@@ -11,9 +11,13 @@ import RealmSwift
 
 class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
   
+  /// Tabela faktur
   @IBOutlet weak var invoicesTable: NSTableView!
   
+  /// Kolekcja faktur do wyświetlenia w tabeli
   var invoices: Results<Invoice>?
+  
+  /// Połączenie z bazą danych Realm
   lazy var realm = try! Realm()
 
   override func viewDidLoad() {
@@ -24,6 +28,16 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     reloadInvoices()
   }
   
+  /// Wczytuje dane o fakturach z bazy danych i odświeża tabelę
+  func reloadInvoices() {
+    invoices = realm.objects(Invoice.self).sorted("issueDate")
+    invoicesTable.reloadData()
+  }
+  
+  // MARK: - IBAction
+  
+  /// Usuwa fakturę zaznaczoną w tabeli faktur `invoicesTable`
+  /// - Parameter sender: obiekt wysyłający żądanie
   @IBAction func deleteInvoice(sender: NSButton) {
     if invoices?.count > invoicesTable.selectedRow && invoicesTable.selectedRow >= 0 {
       let alert = NSAlert()
@@ -45,6 +59,8 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     }
   }
   
+  /// Otwiera okno wyboru typu faktury, a następnie okno dodawania faktury
+  /// - Parameter sender: obiekt wysyłający żądanie
   @IBAction func addInvoice(sender: NSButton) {
     let alert = NSAlert()
     alert.addButtonWithTitle("Faktura kosztowa")
@@ -69,16 +85,20 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     NSApplication.sharedApplication().runModalForWindow(addInvoiceWindow)
   }
   
-  func reloadInvoices() {
-    invoices = realm.objects(Invoice.self).sorted("issueDate")
-    invoicesTable.reloadData()
-  }
-  
   // MARK: - NSTableViewDataSource
+  
+  /// Podaje ilość wierszy do wyświetlenia w tabeli faktur
+  /// - Parameter tableView: `NSTableView` którego dotyczy zapytanie
+  /// - Returns: liczbę wierszy
   func numberOfRowsInTableView(tableView: NSTableView) -> Int {
     return invoices?.count ?? 0
   }
   
+  /// Zwraca widok komórki w tabeli faktur
+  /// - Parameter tableView: `NSTableView` którego dotyczy zapytanie
+  /// - Parameter tableColumn: kolumna, której komórka ma zostać zwrócona
+  /// - Parameter row: wiersz, którego komórka ma zostać zwrócona
+  /// - Returns: widok komórki
   func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
     guard let invoice = invoices?[row] else { return nil }
     
