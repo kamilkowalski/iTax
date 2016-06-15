@@ -24,6 +24,27 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     reloadInvoices()
   }
   
+  @IBAction func deleteInvoice(sender: NSButton) {
+    let alert = NSAlert()
+    alert.addButtonWithTitle("Tak")
+    alert.addButtonWithTitle("Nie")
+    alert.messageText = "Potwierdź usunięcie"
+    alert.informativeText = "Czy na pewno chcesz usunąć fakturę?"
+    alert.alertStyle = .WarningAlertStyle
+    
+    if alert.runModal() == NSAlertFirstButtonReturn {
+      if invoices?.count > invoicesTable.selectedRow && invoicesTable.selectedRow >= 0 {
+        guard let invoice = invoices?[invoicesTable.selectedRow] else { return }
+        
+        try! realm.write {
+          realm.delete(invoice)
+        }
+        
+        reloadInvoices()
+      }
+    }
+  }
+  
   @IBAction func addInvoice(sender: NSButton) {
     let alert = NSAlert()
     alert.addButtonWithTitle("Faktura kosztowa")

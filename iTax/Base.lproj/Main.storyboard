@@ -1570,11 +1570,23 @@
                                     <action selector="addInvoice:" target="QRz-0l-UXD" id="RuD-R5-dmW"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6OD-a6-hRJ">
+                                <rect key="frame" x="122" y="399" width="118" height="32"/>
+                                <buttonCell key="cell" type="push" title="Usuń fakturę" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9VP-Im-ssA">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteInvoice:" target="QRz-0l-UXD" id="Xeq-K4-2eq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="pfb-MX-OEJ" firstAttribute="leading" secondItem="2TE-rq-bh9" secondAttribute="leading" constant="10" id="0Wd-kp-L4t"/>
+                            <constraint firstItem="6OD-a6-hRJ" firstAttribute="leading" secondItem="pfb-MX-OEJ" secondAttribute="trailing" constant="8" id="CFm-st-DVr"/>
                             <constraint firstAttribute="bottom" secondItem="OBt-wx-9sl" secondAttribute="bottom" id="EMI-QV-Izj"/>
                             <constraint firstAttribute="trailing" secondItem="OBt-wx-9sl" secondAttribute="trailing" id="GC3-hZ-Hxp"/>
+                            <constraint firstItem="6OD-a6-hRJ" firstAttribute="baseline" secondItem="pfb-MX-OEJ" secondAttribute="baseline" id="bVU-Id-hmQ"/>
                             <constraint firstItem="OBt-wx-9sl" firstAttribute="leading" secondItem="2TE-rq-bh9" secondAttribute="leading" id="od8-Wm-P5y"/>
                             <constraint firstItem="OBt-wx-9sl" firstAttribute="top" secondItem="pfb-MX-OEJ" secondAttribute="bottom" constant="10" id="tUD-NR-M3z"/>
                             <constraint firstItem="pfb-MX-OEJ" firstAttribute="top" secondItem="2TE-rq-bh9" secondAttribute="top" constant="10" id="uah-Fh-YH2"/>
