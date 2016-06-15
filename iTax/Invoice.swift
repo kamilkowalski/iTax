@@ -76,3 +76,8 @@ class Invoice: Object {
     }
   }
 }
+
+/// Enumerator zawierający typ faktury
+enum InvoiceType: String {
+  case CostInvoice, IncomeInvoice
+}

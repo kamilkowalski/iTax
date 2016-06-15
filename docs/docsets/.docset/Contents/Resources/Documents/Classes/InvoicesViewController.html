@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>InvoicesViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/InvoicesViewController" class="dashAnchor"></a>
+    <a title="InvoicesViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (47% documented)</p>
+        <p class="header-right"><a href="https://github.com/kamilkowalski/iTax"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        InvoicesViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AddInvoiceViewController.html">AddInvoiceViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Address.html">Address</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppDelegate.html">AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Company.html">Company</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Customer.html">Customer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Email.html">Email</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Employee.html">Employee</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IDNumber.html">IDNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Invoice.html">Invoice</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InvoiceItem.html">InvoiceItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InvoicesViewController.html">InvoicesViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NIP.html">NIP</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PESEL.html">PESEL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Person.html">Person</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PhoneNumber.html">PhoneNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RealmHelper.html">RealmHelper</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UserAccount.html">UserAccount</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/InvoiceType.html">InvoiceType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UserAccountRole.html">UserAccountRole</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>InvoicesViewController</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC4iTax22InvoicesViewController13invoicesTableXwGSQCSo11NSTableView_"></a>
+                    <a name="//apple_ref/swift/Property/invoicesTable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC4iTax22InvoicesViewController13invoicesTableXwGSQCSo11NSTableView_">invoicesTable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Tabela faktur</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">invoicesTable</span><span class="p">:</span> <span class="kt">NSTableView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC4iTax22InvoicesViewController8invoicesGSqGC10RealmSwift7ResultsCS_7Invoice__"></a>
+                    <a name="//apple_ref/swift/Property/invoices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC4iTax22InvoicesViewController8invoicesGSqGC10RealmSwift7ResultsCS_7Invoice__">invoices</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Kolekcja faktur do wyświetlenia w tabeli</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">invoices</span><span class="p">:</span> <span class="kt">Results</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/Invoice.html">Invoice</a></span><span class="o">&gt;</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC4iTax22InvoicesViewController5realmC10RealmSwift5Realm"></a>
+                    <a name="//apple_ref/swift/Property/realm" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC4iTax22InvoicesViewController5realmC10RealmSwift5Realm">realm</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Połączenie z bazą danych Realm</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">lazy</span> <span class="k">var</span> <span class="nv">realm</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">Realm</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController11viewDidLoadFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController11viewDidLoadFT_T_">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController14reloadInvoicesFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/reloadInvoices()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController14reloadInvoicesFT_T_">reloadInvoices()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Wczytuje dane o fakturach z bazy danych i odświeża tabelę</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">reloadInvoices</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBAction"></a>
+                <a name="//apple_ref/swift/Section/IBAction" class="dashAnchor"></a>
+                <a href="#/IBAction">
+                  <h3 class="section-name">IBAction</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController13deleteInvoiceFCSo8NSButtonT_"></a>
+                    <a name="//apple_ref/swift/Method/deleteInvoice(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController13deleteInvoiceFCSo8NSButtonT_">deleteInvoice(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Usuwa fakturę zaznaczoną w tabeli faktur <code><a href="../Classes/InvoicesViewController.html#/s:vC4iTax22InvoicesViewController13invoicesTableXwGSQCSo11NSTableView_">invoicesTable</a></code>
+- Parameter sender: obiekt wysyłający żądanie</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">deleteInvoice</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">NSButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>obiekt wysyłający żądanie</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController10addInvoiceFCSo8NSButtonT_"></a>
+                    <a name="//apple_ref/swift/Method/addInvoice(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController10addInvoiceFCSo8NSButtonT_">addInvoice(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Otwiera okno wyboru typu faktury, a następnie okno dodawania faktury
+- Parameter sender: obiekt wysyłający żądanie</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">addInvoice</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">NSButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>obiekt wysyłający żądanie</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/NSTableViewDataSource"></a>
+                <a name="//apple_ref/swift/Section/NSTableViewDataSource" class="dashAnchor"></a>
+                <a href="#/NSTableViewDataSource">
+                  <h3 class="section-name">NSTableViewDataSource</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController23numberOfRowsInTableViewFCSo11NSTableViewSi"></a>
+                    <a name="//apple_ref/swift/Method/numberOfRowsInTableView(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController23numberOfRowsInTableViewFCSo11NSTableViewSi">numberOfRowsInTableView(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Podaje ilość wierszy do wyświetlenia w tabeli faktur
+- Parameter tableView: <code>NSTableView</code> którego dotyczy zapytanie
+- Returns: liczbę wierszy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">numberOfRowsInTableView</span><span class="p">(</span><span class="nv">tableView</span><span class="p">:</span> <span class="kt">NSTableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSTableView</code> którego dotyczy zapytanie</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>liczbę wierszy</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC4iTax22InvoicesViewController9tableViewFTCSo11NSTableView18viewForTableColumnGSqCSo13NSTableColumn_3rowSi_GSqCSo6NSView_"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:viewForTableColumn:row:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC4iTax22InvoicesViewController9tableViewFTCSo11NSTableView18viewForTableColumnGSqCSo13NSTableColumn_3rowSi_GSqCSo6NSView_">tableView(_:viewForTableColumn:row:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Zwraca widok komórki w tabeli faktur
+- Parameter tableView: <code>NSTableView</code> którego dotyczy zapytanie
+- Parameter tableColumn: kolumna, której komórka ma zostać zwrócona
+- Parameter row: wiersz, którego komórka ma zostać zwrócona
+- Returns: widok komórki</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="nv">tableView</span><span class="p">:</span> <span class="kt">NSTableView</span><span class="p">,</span> <span class="n">viewForTableColumn</span> <span class="nv">tableColumn</span><span class="p">:</span> <span class="kt">NSTableColumn</span><span class="p">?,</span> <span class="nv">row</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSView</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSTableView</code> którego dotyczy zapytanie</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableColumn</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>kolumna, której komórka ma zostać zwrócona</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>row</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>wiersz, którego komórka ma zostać zwrócona</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>widok komórki</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="http://www.kamilkowalski.pl" target="_blank" rel="external">Kamil Kowalski</a>. All rights reserved. (Last updated: 2016-06-16)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmHelper {
+  /// Kolejkuje migrację dla bazy danych Realm
   static func configureMigrations() {
     let config = Realm.Configuration(
       schemaVersion: 2,
