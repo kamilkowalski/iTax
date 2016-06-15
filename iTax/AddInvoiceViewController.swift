@@ -24,6 +24,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   
   @IBOutlet weak var itemsTable: NSTableView!
   
+  var invoicesViewController: InvoicesViewController?
   var invoiceType: InvoiceType = InvoiceType.CostInvoice {
     didSet {
       if oldValue != InvoiceType.IncomeInvoice && invoiceType == InvoiceType.IncomeInvoice {
@@ -142,7 +143,20 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     let invoice = Invoice()
     invoice.number = numberField.stringValue
     invoice.issueDate = issueDateField.dateValue
+    invoice.paymentDeadline = paymentDeadlineField.dateValue
     
+    invoice.customerFullName = fullNameField.stringValue
+    invoice.customerShortName = shortNameField.stringValue
+    invoice.customerAddressCity = cityField.stringValue
+    invoice.customerAddressStreet = streetAddressField.stringValue
+    let postalCode = "\(zipSmallField.stringValue)-\(zipBigField.stringValue)"
+    invoice.customerAddressPostalCode = postalCode
+    
+    invoice.items.appendContentsOf(items)
+    
+    try! realm.write {
+      realm.add(invoice)
+    }
     
     return true
   }

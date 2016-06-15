@@ -7,8 +7,12 @@
 //
 
 import Cocoa
+import RealmSwift
 
 class InvoicesViewController: NSViewController {
+  
+  var invoices: Results<Invoice>?
+  var realm = try! Realm()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,6 +39,11 @@ class InvoicesViewController: NSViewController {
     guard let viewController = addInvoiceWindow.contentViewController as? AddInvoiceViewController else { return }
     
     viewController.invoiceType = invoiceType
+    viewController.invoicesViewController = self
     NSApplication.sharedApplication().runModalForWindow(addInvoiceWindow)
+  }
+  
+  func reloadInvoices() {
+    invoices = realm.objects(Invoice.self).sorted("issueDate")
   }
 }
