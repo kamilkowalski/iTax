@@ -16,6 +16,24 @@ class InvoiceItem: Object {
   dynamic var taxRate = 23
   dynamic var netPrice = 100.0
   
+  dynamic var invoice: Invoice? {
+    willSet {
+      if invoice == newValue {
+        return
+      }
+      
+      if invoice != nil {
+        invoice?.removeInvoiceItem(self)
+      }
+    }
+    
+    didSet {
+      if invoice != oldValue {
+        invoice?.addInvoiceItem(self)
+      }
+    }
+  }
+  
   private var taxRateMultiplier: Double {
     get {
       return 1 + (Double(taxRate) / 100)

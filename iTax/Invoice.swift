@@ -44,4 +44,17 @@ class Invoice: Object {
       return items.map { $0.totalGrossPrice }.reduce(0, combine: +)
     }
   }
+
+  func addInvoiceItem(item: InvoiceItem) {
+    if items.indexOf(item) == nil {
+      items.append(item)
+      item.invoice = self
+    }
+  }
+  
+  func removeInvoiceItem(item: InvoiceItem) {
+    if let index = items.indexOf(item) {
+      items.removeAtIndex(index)
+    }
+  }
 }
