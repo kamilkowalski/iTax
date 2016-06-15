@@ -23,6 +23,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   @IBOutlet weak var cityField: NSTextField!
   
   @IBOutlet weak var itemsTable: NSTableView!
+  @IBOutlet weak var header: NSTextField!
   
   var invoicesViewController: InvoicesViewController?
   var invoiceType: InvoiceType = InvoiceType.CostInvoice {
@@ -31,6 +32,18 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
         numberField.stringValue = generateInvoiceNumber()
         numberField.enabled = false
       }
+      
+      var title = "Dodawanie faktury"
+      
+      switch invoiceType {
+      case .CostInvoice:
+        title = "Dodawanie faktury kosztowej"
+      case .IncomeInvoice:
+        title = "Dodawanie faktury przychodowej"
+      }
+      
+      self.view.window?.title = title
+      header.stringValue = title
     }
   }
   var items: [InvoiceItem] = []
@@ -213,7 +226,9 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
       (String(format: "%d", item.quantity), "QuantityCellID"),
       (String(format: "%d%%", item.taxRate), "TaxCellID"),
       (String(format: "%.2f", item.netPrice), "NetCellID"),
-      (String(format: "%.2f", item.grossPrice), "GrossCellID")
+      (String(format: "%.2f", item.grossPrice), "GrossCellID"),
+      (String(format: "%.2f", item.totalNetPrice), "TotalNetCellID"),
+      (String(format: "%.2f", item.totalGrossPrice), "TotalGrossCellID")
     ]
     
     (text, cellIdentifier) = columnSpec[index]

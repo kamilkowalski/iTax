@@ -35,13 +35,13 @@ class Invoice: Object {
   
   var netPrice: Double {
     get {
-      return items.map { $0.netPrice }.reduce(0, combine: +)
+      return items.map { $0.totalNetPrice }.reduce(0, combine: +)
     }
   }
   
   var grossPrice: Double {
     get {
-      return items.map { $0.grossPrice }.reduce(0, combine: +)
+      return items.map { $0.totalGrossPrice }.reduce(0, combine: +)
     }
   }
 }

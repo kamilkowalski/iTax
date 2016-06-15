@@ -30,4 +30,16 @@ class InvoiceItem: Object {
       netPrice = newValue / taxRateMultiplier
     }
   }
+  
+  var totalNetPrice: Double {
+    get {
+      return netPrice * Double(quantity)
+    }
+  }
+  
+  var totalGrossPrice: Double {
+    get {
+      return grossPrice * Double(quantity)
+    }
+  }
 }
