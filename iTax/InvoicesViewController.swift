@@ -9,14 +9,19 @@
 import Cocoa
 import RealmSwift
 
-class InvoicesViewController: NSViewController {
+class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+  
+  @IBOutlet weak var invoicesTable: NSTableView!
   
   var invoices: Results<Invoice>?
   lazy var realm = try! Realm()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do view setup here.
+    RealmHelper.configureMigrations()
+    invoicesTable.setDataSource(self)
+    invoicesTable.setDelegate(self)
+    reloadInvoices()
   }
   
   @IBAction func addInvoice(sender: NSButton) {
@@ -45,5 +50,46 @@ class InvoicesViewController: NSViewController {
   
   func reloadInvoices() {
     invoices = realm.objects(Invoice.self).sorted("issueDate")
+    invoicesTable.reloadData()
+  }
+  
+  // MARK: - NSTableViewDataSource
+  func numberOfRowsInTableView(tableView: NSTableView) -> Int {
+    return invoices?.count ?? 0
+  }
+  
+  func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
+    guard let invoice = invoices?[row] else { return nil }
+    
+    var text:String = ""
+    var cellIdentifier: String = ""
+    
+    guard let column = tableColumn else {
+      return nil
+    }
+    
+    guard let index = tableView.tableColumns.indexOf(column) else {
+      return nil
+    }
+    
+    let formatter = NSDateFormatter()
+    formatter.dateStyle = .MediumStyle
+    
+    let columnSpec: [(String, String)] = [
+      (invoice.number, "NumberCellID"),
+      (invoice.customerShortName, "CustomerCellID"),
+      (formatter.stringFromDate(invoice.issueDate!), "IssueDateCellID"),
+      (formatter.stringFromDate(invoice.paymentDeadline!), "PaymentDeadlineCellID"),
+      (String(format: "%.2f", invoice.netPrice), "NetCellID"),
+      (String(format: "%.2f", invoice.grossPrice), "GrossCellID")
+    ]
+    
+    (text, cellIdentifier) = columnSpec[index]
+    
+    if let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as? NSTableCellView {
+      cell.textField?.stringValue = text
+      return cell
+    }
+    return nil
   }
 }

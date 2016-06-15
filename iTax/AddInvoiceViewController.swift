@@ -68,6 +68,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     let application = NSApplication.sharedApplication()
     application.abortModal()
     self.view.window?.close()
+    invoicesViewController?.reloadInvoices()
   }
   
   private func persistChangesTo(sender: NSTextField) {

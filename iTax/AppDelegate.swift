@@ -7,20 +7,12 @@
 //
 
 import Cocoa
-import RealmSwift
 
-@NSApplicationMain
+@NSApplicationMain 
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
   func applicationDidFinishLaunching(aNotification: NSNotification) {
-    let config = Realm.Configuration(
-      schemaVersion: 1,
-      migrationBlock: { migration, oldSchemaVersion in
-    })
-    
-    Realm.Configuration.defaultConfiguration = config
+    RealmHelper.configureMigrations()
   }
 
   func applicationWillTerminate(aNotification: NSNotification) {

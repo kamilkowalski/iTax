@@ -32,4 +32,16 @@ class Invoice: Object {
       typeRaw = newValue.rawValue
     }
   }
+  
+  var netPrice: Double {
+    get {
+      return items.map { $0.netPrice }.reduce(0, combine: +)
+    }
+  }
+  
+  var grossPrice: Double {
+    get {
+      return items.map { $0.netPrice }.reduce(0, combine: +)
+    }
+  }
 }
