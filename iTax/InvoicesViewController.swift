@@ -12,7 +12,7 @@ import RealmSwift
 class InvoicesViewController: NSViewController {
   
   var invoices: Results<Invoice>?
-  var realm = try! Realm()
+  lazy var realm = try! Realm()
 
   override func viewDidLoad() {
     super.viewDidLoad()

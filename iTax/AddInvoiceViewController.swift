@@ -34,7 +34,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     }
   }
   var items: [InvoiceItem] = []
-  let realm = try! Realm()
+  lazy var realm = try! Realm()
   
   override func viewDidLoad() {
     super.viewDidLoad()
