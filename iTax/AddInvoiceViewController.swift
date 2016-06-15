@@ -142,6 +142,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   
   private func saveInvoice() -> Bool {
     let invoice = Invoice()
+    invoice.type = invoiceType
     invoice.number = numberField.stringValue
     invoice.issueDate = issueDateField.dateValue
     invoice.paymentDeadline = paymentDeadlineField.dateValue
