@@ -40,9 +40,23 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     
     itemsTable.setDelegate(self)
     itemsTable.setDataSource(self)
+    
+    resetDates()
   }
   
   // MARK: - private
+  
+  private func resetDates() {
+    issueDateField.dateValue = NSDate()
+    
+    let calendar = NSCalendar.currentCalendar()
+    let dayComponent = NSDateComponents()
+    dayComponent.day = 5
+    
+    guard let paymentDate = calendar.dateByAddingComponents(dayComponent, toDate: NSDate(), options: []) else { return }
+    
+    paymentDeadlineField.dateValue = paymentDate
+  }
   
   private func addEmptyItem() {
     items.append(InvoiceItem())
@@ -124,6 +138,15 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     return (from, to)
   }
   
+  private func saveInvoice() -> Bool {
+    let invoice = Invoice()
+    invoice.number = numberField.stringValue
+    invoice.issueDate = issueDateField.dateValue
+    
+    
+    return true
+  }
+  
   // MARK: - IBAction
   
   @IBAction func cellValueChanged(sender: NSTextField) {
@@ -142,7 +165,9 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   }
   
   @IBAction func save(sender: NSButton) {
-    closeWindow()
+    if saveInvoice() {
+      closeWindow()
+    }
   }
   
   @IBAction func cancel(sender: NSButton) {
