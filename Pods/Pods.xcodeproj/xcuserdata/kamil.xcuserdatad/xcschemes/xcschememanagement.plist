@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>CryptoSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-iTax.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2AD15978F46B31883932817186AD12DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>30943B25F0DEC51D0012EB94E0670356</key>
+		<key>69545084237F0E55EB5F674C8EC68424</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2AD15978F46B31883932817186AD12DC"
+               BlueprintIdentifier = "69545084237F0E55EB5F674C8EC68424"
                BuildableName = "Pods_iTax.framework"
                BlueprintName = "Pods-iTax"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2AD15978F46B31883932817186AD12DC"
+            BlueprintIdentifier = "69545084237F0E55EB5F674C8EC68424"
             BuildableName = "Pods_iTax.framework"
             BlueprintName = "Pods-iTax"
             ReferencedContainer = "container:Pods.xcodeproj">
