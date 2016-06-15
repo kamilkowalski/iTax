@@ -25,15 +25,15 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
   }
   
   @IBAction func deleteInvoice(sender: NSButton) {
-    let alert = NSAlert()
-    alert.addButtonWithTitle("Tak")
-    alert.addButtonWithTitle("Nie")
-    alert.messageText = "Potwierdź usunięcie"
-    alert.informativeText = "Czy na pewno chcesz usunąć fakturę?"
-    alert.alertStyle = .WarningAlertStyle
+    if invoices?.count > invoicesTable.selectedRow && invoicesTable.selectedRow >= 0 {
+      let alert = NSAlert()
+      alert.addButtonWithTitle("Tak")
+      alert.addButtonWithTitle("Nie")
+      alert.messageText = "Potwierdź usunięcie"
+      alert.informativeText = "Czy na pewno chcesz usunąć fakturę?"
+      alert.alertStyle = .WarningAlertStyle
     
-    if alert.runModal() == NSAlertFirstButtonReturn {
-      if invoices?.count > invoicesTable.selectedRow && invoicesTable.selectedRow >= 0 {
+      if alert.runModal() == NSAlertFirstButtonReturn {
         guard let invoice = invoices?[invoicesTable.selectedRow] else { return }
         
         try! realm.write {
