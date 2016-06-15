@@ -6,6 +6,6 @@
 //  Copyright © 2016 Kamil Kowalski. All rights reserved.
 //
 
-enum InvoiceType {
+enum InvoiceType: String {
   case CostInvoice, IncomeInvoice
 }

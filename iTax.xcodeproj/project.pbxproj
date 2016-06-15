@@ -13,6 +13,8 @@
 		8E70628A1D0E08B6005255F4 /* CustomersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E7062891D0E08B6005255F4 /* CustomersViewController.swift */; };
 		8ED298EA1D0F37DD0002A084 /* AddInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED298E91D0F37DD0002A084 /* AddInvoiceViewController.swift */; };
 		8ED298ED1D0F42FE0002A084 /* InvoiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED298EC1D0F42FE0002A084 /* InvoiceType.swift */; };
+		8ED298F11D0F6A440002A084 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED298F01D0F6A440002A084 /* Invoice.swift */; };
+		8ED298F31D0F6C6A0002A084 /* InvoiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED298F21D0F6C6A0002A084 /* InvoiceItem.swift */; };
 		8EE21B881D0C79C900D55633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE21B871D0C79C900D55633 /* AppDelegate.swift */; };
 		8EE21B8D1D0C79C900D55633 /* iTax.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8EE21B8B1D0C79C900D55633 /* iTax.xcdatamodeld */; };
 		8EE21B8F1D0C79C900D55633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE21B8E1D0C79C900D55633 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		8E7062891D0E08B6005255F4 /* CustomersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomersViewController.swift; sourceTree = "<group>"; };
 		8ED298E91D0F37DD0002A084 /* AddInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddInvoiceViewController.swift; sourceTree = "<group>"; };
 		8ED298EC1D0F42FE0002A084 /* InvoiceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceType.swift; sourceTree = "<group>"; };
+		8ED298F01D0F6A440002A084 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		8ED298F21D0F6C6A0002A084 /* InvoiceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceItem.swift; sourceTree = "<group>"; };
 		8EE21B841D0C79C900D55633 /* iTax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EE21B871D0C79C900D55633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EE21B8C1D0C79C900D55633 /* iTax.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTax.xcdatamodel; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				8EE21BB51D0CA70100D55633 /* NIP.swift */,
 				8EE21BB71D0CA72E00D55633 /* IDNumber.swift */,
 				8EE290EE1D0CB78700F3D143 /* UserAccount.swift */,
+				8ED298F01D0F6A440002A084 /* Invoice.swift */,
+				8ED298F21D0F6C6A0002A084 /* InvoiceItem.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -315,10 +321,12 @@
 				8EE21B8D1D0C79C900D55633 /* iTax.xcdatamodeld in Sources */,
 				8EE21BAC1D0CA08E00D55633 /* Address.swift in Sources */,
 				8E40876A1D0E0352002C32EB /* MainViewController.swift in Sources */,
+				8ED298F11D0F6A440002A084 /* Invoice.swift in Sources */,
 				8EE21BB01D0CA30300D55633 /* Customer.swift in Sources */,
 				8EE21BA21D0C930400D55633 /* Company.swift in Sources */,
 				8E70628A1D0E08B6005255F4 /* CustomersViewController.swift in Sources */,
 				8EE21BAE1D0CA18E00D55633 /* PhoneNumber.swift in Sources */,
+				8ED298F31D0F6C6A0002A084 /* InvoiceItem.swift in Sources */,
 				8EE21BB81D0CA72E00D55633 /* IDNumber.swift in Sources */,
 				8ED298EA1D0F37DD0002A084 /* AddInvoiceViewController.swift in Sources */,
 				8EE21BB61D0CA70100D55633 /* NIP.swift in Sources */,
