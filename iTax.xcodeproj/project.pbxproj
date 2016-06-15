@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED298EB1D0F42EF0002A084 /* Helper */,
-				8EE290F01D0CBD6900F3D143 /* Views */,
+				8EE290F01D0CBD6900F3D143 /* ViewControllers */,
 				8EE21BA01D0C92B600D55633 /* Models */,
 				8EE21B871D0C79C900D55633 /* AppDelegate.swift */,
 				8EE21B8E1D0C79C900D55633 /* Assets.xcassets */,
@@ -180,7 +180,7 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		8EE290F01D0CBD6900F3D143 /* Views */ = {
+		8EE290F01D0CBD6900F3D143 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8E4087681D0E0352002C32EB /* MainViewController.swift */,
@@ -188,7 +188,7 @@
 				8E7062891D0E08B6005255F4 /* CustomersViewController.swift */,
 				8ED298E91D0F37DD0002A084 /* AddInvoiceViewController.swift */,
 			);
-			name = Views;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

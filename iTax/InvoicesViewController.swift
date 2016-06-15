@@ -96,19 +96,33 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     let formatter = NSDateFormatter()
     formatter.dateStyle = .MediumStyle
     
+    let sign = invoice.type == InvoiceType.IncomeInvoice ? "+" : "-"
+    
     let columnSpec: [(String, String)] = [
       (invoice.number, "NumberCellID"),
       (invoice.customerShortName, "CustomerCellID"),
       (formatter.stringFromDate(invoice.issueDate!), "IssueDateCellID"),
       (formatter.stringFromDate(invoice.paymentDeadline!), "PaymentDeadlineCellID"),
-      (String(format: "%.2f", invoice.netPrice), "NetCellID"),
-      (String(format: "%.2f", invoice.grossPrice), "GrossCellID")
+      (String(format: "\(sign)%.2f", invoice.netPrice), "NetCellID"),
+      (String(format: "\(sign)%.2f", invoice.grossPrice), "GrossCellID")
     ]
     
     (text, cellIdentifier) = columnSpec[index]
     
+    var color = NSColor.textColor()
+    
+    if ["NetCellID", "GrossCellID"].contains(cellIdentifier) {
+      switch invoice.type {
+      case .IncomeInvoice:
+        color = NSColor(calibratedRed: 92.0/255.0, green: 184.0/255.0, blue: 92.0/255.0, alpha: 1.0)
+      case .CostInvoice:
+        color = NSColor(calibratedRed: 217.0/255.0, green: 83.0/255.0, blue: 79.0/255.0, alpha: 1.0)
+      }
+    }
+    
     if let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as? NSTableCellView {
       cell.textField?.stringValue = text
+      cell.textField?.textColor = color
       return cell
     }
     return nil
