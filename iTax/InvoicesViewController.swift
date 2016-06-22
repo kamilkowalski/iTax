@@ -25,6 +25,7 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     RealmHelper.configureMigrations()
     invoicesTable.setDataSource(self)
     invoicesTable.setDelegate(self)
+    invoicesTable.doubleAction = #selector(InvoicesViewController.showInvoice)
     reloadInvoices()
   }
   
@@ -32,6 +33,19 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
   func reloadInvoices() {
     invoices = realm.objects(Invoice.self).sorted("issueDate")
     invoicesTable.reloadData()
+  }
+  
+  @objc private func showInvoice() {
+    let index = invoicesTable.clickedRow
+    guard let invoice = invoices?[index] else { return }
+    
+    let showInvoiceWindowController = self.storyboard?.instantiateControllerWithIdentifier("showInvoiceView") as! NSWindowController
+    
+    guard let showInvoiceWindow = showInvoiceWindowController.window else { return }
+    guard let viewController = showInvoiceWindow.contentViewController as? ShowInvoiceViewController else { return }
+    
+    viewController.invoice = invoice
+    NSApplication.sharedApplication().runModalForWindow(showInvoiceWindow)
   }
   
   // MARK: - IBAction

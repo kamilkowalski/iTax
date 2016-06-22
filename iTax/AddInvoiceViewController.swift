@@ -195,7 +195,7 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     let postalCode = "\(zipSmallField.stringValue)-\(zipBigField.stringValue)"
     invoice.customerAddressPostalCode = postalCode
     
-    invoice.items.appendContentsOf(items)
+    items.forEach{ invoice.addInvoiceItem($0) }
     
     try! realm.write {
       realm.add(invoice)
