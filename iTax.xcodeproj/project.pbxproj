@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8CE0DF9651FBDA4C99FBCBCF /* Pods_iTax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD4A2FBCAA5B86E10960DE8 /* Pods_iTax.framework */; };
 		8E25A2D41D1B401C00BA8BCB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25A2D31D1B401C00BA8BCB /* Product.swift */; };
+		8E25A2D61D1BB8BC00BA8BCB /* ComboBoxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25A2D51D1BB8BC00BA8BCB /* ComboBoxCell.swift */; };
 		8E4087721D0E0772002C32EB /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4087701D0E0772002C32EB /* InvoicesViewController.swift */; };
 		8E5FCFFD1D11C61300696A33 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FCFFC1D11C61300696A33 /* RealmHelper.swift */; };
 		8EA1AED71D12E8F1002C1751 /* ShowInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1AED61D12E8F1002C1751 /* ShowInvoiceViewController.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		212EC5C9CDF4D2EB0A247511 /* Pods-iTax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTax/Pods-iTax.debug.xcconfig"; sourceTree = "<group>"; };
 		8E25A2D31D1B401C00BA8BCB /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		8E25A2D51D1BB8BC00BA8BCB /* ComboBoxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComboBoxCell.swift; sourceTree = "<group>"; };
 		8E4087701D0E0772002C32EB /* InvoicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
 		8E5FCFFC1D11C61300696A33 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		8EA1AED61D12E8F1002C1751 /* ShowInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInvoiceViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8E25A2D71D1BB8C200BA8BCB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E25A2D51D1BB8BC00BA8BCB /* ComboBoxCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		8ED298EB1D0F42EF0002A084 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		8EE21B861D0C79C900D55633 /* iTax */ = {
 			isa = PBXGroup;
 			children = (
+				8E25A2D71D1BB8C200BA8BCB /* Views */,
 				8ED298EB1D0F42EF0002A084 /* Helper */,
 				8EE290F01D0CBD6900F3D143 /* ViewControllers */,
 				8EE21BA01D0C92B600D55633 /* Models */,
@@ -314,6 +325,7 @@
 				8EE21BA41D0C97E000D55633 /* Email.swift in Sources */,
 				8EE21B881D0C79C900D55633 /* AppDelegate.swift in Sources */,
 				8EE21BB21D0CA3D900D55633 /* Employee.swift in Sources */,
+				8E25A2D61D1BB8BC00BA8BCB /* ComboBoxCell.swift in Sources */,
 				8E5FCFFD1D11C61300696A33 /* RealmHelper.swift in Sources */,
 				8EE21BAA1D0C9FB800D55633 /* Person.swift in Sources */,
 				8EE21BB41D0CA6E400D55633 /* PESEL.swift in Sources */,

@@ -65,6 +65,8 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   var customers: Results<Customer>?
   /// Lista produktów do wyboru
   var products: Results<Product>?
+  // Ostatnio wybrany wiersz w tabeli pozycji faktury
+  var lastRowIndex = -1
   /// Połączenie z bazą danych Realm
   lazy var realm = try! Realm()
   
@@ -135,7 +137,9 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
       return
     }
     
-    let row = itemsTable.selectedRow
+    let row = lastRowIndex
+    
+    if row == -1 { return }
     
     switch identifier {
     case "NameCellID":
@@ -268,6 +272,14 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     closeWindow()
   }
   
+  // MARK: - NSTableViewDelegate
+  
+  func tableView(tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+    print(row)
+    lastRowIndex = row
+    return true
+  }
+  
   // MARK: - NSTableViewDataSource
   
   /// Podaje ilość wierszy do wyświetlenia w tabeli pozycji faktury
@@ -291,11 +303,22 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
       return nil
     }
     
-    guard let index = tableView.tableColumns.indexOf(column) else {
+    guard var index = tableView.tableColumns.indexOf(column) else {
       return nil
     }
+    
+    if index == 0 {
+      if let nameCell = tableView.makeViewWithIdentifier("NameCellID", owner: nil) as? ComboBoxCell {
+        nameCell.comboBox.usesDataSource = true
+        nameCell.comboBox.dataSource = self
+        nameCell.comboBox.stringValue = item.name
+        return nameCell
+      }
+    } else {
+      index -= 1
+    }
+    
     let columnSpec: [(String, String)] = [
-      (item.name, "NameCellID"),
       (item.unit, "UnitCellID"),
       (String(format: "%d", item.quantity), "QuantityCellID"),
       (String(format: "%d%%", item.taxRate), "TaxCellID"),
@@ -316,11 +339,29 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   
   // MARK: - NSComboBoxDataSource
   func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
-    return customers?.count ?? 0
+    guard let identifier = aComboBox.identifier else { return 0 }
+    
+    switch identifier {
+    case "FullNameComboBox":
+      return customers?.count ?? 0
+    case "ProductNameComboBox":
+      return products?.count ?? 0
+    default:
+      return 0
+    }
   }
   
   func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
-    return customers![index].fullName
+    guard let identifier = aComboBox.identifier else { return 0 }
+    
+    switch identifier {
+    case "FullNameComboBox":
+      return customers![index].fullName
+    case "ProductNameComboBox":
+      return products![index].name
+    default:
+      return ""
+    }
   }
   
   func comboBoxSelectionDidChange(notification: NSNotification) {
