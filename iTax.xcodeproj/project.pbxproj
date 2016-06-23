@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8CE0DF9651FBDA4C99FBCBCF /* Pods_iTax.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD4A2FBCAA5B86E10960DE8 /* Pods_iTax.framework */; };
+		8E25A2D41D1B401C00BA8BCB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E25A2D31D1B401C00BA8BCB /* Product.swift */; };
 		8E4087721D0E0772002C32EB /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4087701D0E0772002C32EB /* InvoicesViewController.swift */; };
 		8E5FCFFD1D11C61300696A33 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5FCFFC1D11C61300696A33 /* RealmHelper.swift */; };
 		8EA1AED71D12E8F1002C1751 /* ShowInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1AED61D12E8F1002C1751 /* ShowInvoiceViewController.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		212EC5C9CDF4D2EB0A247511 /* Pods-iTax.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTax.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTax/Pods-iTax.debug.xcconfig"; sourceTree = "<group>"; };
+		8E25A2D31D1B401C00BA8BCB /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		8E4087701D0E0772002C32EB /* InvoicesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
 		8E5FCFFC1D11C61300696A33 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		8EA1AED61D12E8F1002C1751 /* ShowInvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowInvoiceViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				8EE290EE1D0CB78700F3D143 /* UserAccount.swift */,
 				8ED298F01D0F6A440002A084 /* Invoice.swift */,
 				8ED298F21D0F6C6A0002A084 /* InvoiceItem.swift */,
+				8E25A2D31D1B401C00BA8BCB /* Product.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				8EE21BB81D0CA72E00D55633 /* IDNumber.swift in Sources */,
 				8ED298EA1D0F37DD0002A084 /* AddInvoiceViewController.swift in Sources */,
 				8EE21BB61D0CA70100D55633 /* NIP.swift in Sources */,
+				8E25A2D41D1B401C00BA8BCB /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

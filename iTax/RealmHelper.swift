@@ -13,7 +13,7 @@ class RealmHelper {
   /// Kolejkuje migrację dla bazy danych Realm
   static func configureMigrations() {
     let config = Realm.Configuration(
-      schemaVersion: 2,
+      schemaVersion: 3,
       migrationBlock: { migration, oldSchemaVersion in
     })
     

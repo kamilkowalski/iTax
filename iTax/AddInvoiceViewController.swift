@@ -9,7 +9,7 @@
 import Cocoa
 import RealmSwift
 
-class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, NSComboBoxDataSource, NSComboBoxDelegate {
 
   /// Pole numeru faktury
   @IBOutlet weak var numberField: NSTextField!
@@ -18,8 +18,8 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   /// Pole terminu płatności faktury
   @IBOutlet weak var paymentDeadlineField: NSDatePicker!
   
-  /// Pole pełnej nazwy kontrahenta
-  @IBOutlet weak var fullNameField: NSTextField!
+  // Pole pełnej nazwy kontrahenta
+  @IBOutlet weak var fullNameField: NSComboBox!
   /// Pole nazwy skróconej kontrahenta
   @IBOutlet weak var shortNameField: NSTextField!
   /// Pole adresu kontrahenta
@@ -61,19 +61,43 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
   }
   /// Lista pozycji faktury do wyświetlenia
   var items: [InvoiceItem] = []
+  /// Lista klientów do wyboru
+  var customers: Results<Customer>?
+  /// Lista produktów do wyboru
+  var products: Results<Product>?
   /// Połączenie z bazą danych Realm
   lazy var realm = try! Realm()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    loadData()
+    
     itemsTable.setDelegate(self)
     itemsTable.setDataSource(self)
     
+    fullNameField.usesDataSource = true
+    fullNameField.dataSource = self
+    fullNameField.setDelegate(self)
+
     resetDates()
   }
   
+  func insertItemFromProduct(product: Product) {
+    let item = InvoiceItem()
+    item.name = product.name
+    item.unit = product.unit
+    item.taxRate = product.taxRate
+    item.netPrice = product.netPrice
+    itemsTable.reloadData()
+  }
+  
   // MARK: - private
+  
+  private func loadData() {
+    customers = realm.objects(Customer.self).sorted("fullName")
+    products = realm.objects(Product.self).sorted("name")
+  }
   
   /// Ustawia datę wydania faktury na dzisiejszą, a datę terminu na 5 dni wstecz
   private func resetDates() {
@@ -227,6 +251,9 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
     }
   }
   
+  @IBAction func openProductSearch(sender: NSButton) {
+  }
+  
   /// Akcja wywoływana po naciśnięciu przycisku "Zapisz fakturę"
   /// - Parameter sender: przycisk, który wywołał akcję
   @IBAction func save(sender: NSButton) {
@@ -285,5 +312,32 @@ class AddInvoiceViewController: NSViewController, NSTableViewDataSource, NSTable
       return cell
     }
     return nil
+  }
+  
+  // MARK: - NSComboBoxDataSource
+  func numberOfItemsInComboBox(aComboBox: NSComboBox) -> Int {
+    return customers?.count ?? 0
+  }
+  
+  func comboBox(aComboBox: NSComboBox, objectValueForItemAtIndex index: Int) -> AnyObject {
+    return customers![index].fullName
+  }
+  
+  func comboBoxSelectionDidChange(notification: NSNotification) {
+    if fullNameField.indexOfSelectedItem < customers!.count {
+      let selectedCustomer = customers![fullNameField.indexOfSelectedItem]
+      
+      shortNameField.stringValue = selectedCustomer.shortName
+      streetAddressField.stringValue = selectedCustomer.streetAddress
+      
+      let zipComponents = selectedCustomer.zipCode.componentsSeparatedByString("-")
+      
+      if zipComponents.count == 2 {
+        zipSmallField.stringValue = zipComponents[0]
+        zipBigField.stringValue = zipComponents[1]
+      }
+      
+      cityField.stringValue = selectedCustomer.city
+    }
   }
 }

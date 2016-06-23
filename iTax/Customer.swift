@@ -12,7 +12,8 @@ import RealmSwift
 class Customer: Object {
   dynamic var fullName = ""
   dynamic var shortName = ""
-  var telephone: PhoneNumber?
-  var email: Email?
-  var company: Company?
+  dynamic var nip = ""
+  dynamic var streetAddress = ""
+  dynamic var zipCode = ""
+  dynamic var city = ""
 }

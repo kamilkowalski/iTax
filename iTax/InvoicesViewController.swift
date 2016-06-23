@@ -27,12 +27,71 @@ class InvoicesViewController: NSViewController, NSTableViewDelegate, NSTableView
     invoicesTable.setDelegate(self)
     invoicesTable.doubleAction = #selector(InvoicesViewController.showInvoice)
     reloadInvoices()
+    loadSampleData()
   }
   
   /// Wczytuje dane o fakturach z bazy danych i odświeża tabelę
   func reloadInvoices() {
     invoices = realm.objects(Invoice.self).sorted("issueDate")
     invoicesTable.reloadData()
+  }
+  
+  private func loadSampleData() {
+    if realm.objects(Customer.self).count == 0 {
+      let c1 = Customer()
+      c1.fullName = "Orange Sp. z o. o."
+      c1.shortName = "Orange"
+      c1.nip = "58310593"
+      c1.streetAddress = "Nowy Świat 15"
+      c1.zipCode = "01-001"
+      c1.city = "Warszawa"
+      
+      let c2 = Customer()
+      c2.fullName = "Telekomunikacja Polska SA"
+      c2.shortName = "TPSA"
+      c2.nip = "407195821"
+      c2.streetAddress = "Al. Jerozolimskie 301"
+      c2.zipCode = "02-511"
+      c2.city = "Warszawa"
+      
+      let c3 = Customer()
+      c3.fullName = "Comarch SA"
+      c3.shortName = "Comarch"
+      c3.nip = "58719351"
+      c3.streetAddress = "al. Jana Pawła II 39"
+      c3.zipCode = "31-864"
+      c3.city = "Kraków"
+      
+      try! realm.write {
+        realm.add(c1)
+        realm.add(c2)
+        realm.add(c3)
+      }
+    }
+    
+    if realm.objects(Product.self).count == 0 {
+      let p1 = Product()
+      p1.name = "Suszarka do włosów"
+      p1.unit = "szt."
+      p1.taxRate = 18
+      p1.netPrice = 56.50
+      
+      let p2 = Product()
+      p2.name = "Mąka tortowa"
+      p2.unit = "kg"
+      p2.netPrice = 3.20
+      
+      let p3 = Product()
+      p3.name = "Mysz Logitech"
+      p3.unit = "szt."
+      p3.netPrice = 82.20
+      
+      try! realm.write {
+        realm.add(p1)
+        realm.add(p2)
+        realm.add(p3)
+      }
+    }
   }
   
   @objc private func showInvoice() {
